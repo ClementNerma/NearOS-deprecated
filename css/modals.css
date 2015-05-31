@@ -1,0 +1,11 @@
+/* line 2, ../sass/modals.scss */
+#desktop .window.board-modal:not(.board-modal-default) .content {
+  padding-left: 50px;
+}
+/* line 5, ../sass/modals.scss */
+#desktop .window.board-modal:not(.board-modal-default) .content img.modal-thumb {
+  float: left;
+  margin-left: -50px;
+  width: 40px;
+  height: 40px;
+}

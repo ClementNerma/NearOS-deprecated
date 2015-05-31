@@ -1,0 +1,11 @@
+
+#desktop .window.board-modal:not(.board-modal-default) .content {
+  padding-left: 50px;
+
+  img.modal-thumb {
+    float: left;
+    margin-left: -50px;
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,122 @@
+@import 'compass/css3';
+@import 'compass/utilities';
+
+body {
+  color: black;
+  overflow: hidden;
+  font-family: Open Sans, "Open Sans";
+}
+
+/* Board style */
+
+#desktop {
+  position: absolute;
+  padding: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+}
+
+#desktop {
+  background: url(../images/wallpaper.jpg) no-repeat top left;
+  z-index: 0;
+}
+
+#taskbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 40px;
+  border-bottom: 1px solid gray;
+  z-index: 1;
+}
+
+#taskbar div.window {
+  display: inline-block;
+  padding: 10px;
+  height: 40px;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  background-color: white;
+}
+
+#taskbar div.window:hover {
+  cursor: pointer;
+}
+
+body > .window {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: white;
+  min-width: 350px;
+  min-height: 150px;
+  border: 1px solid gray;
+  z-index: 2;
+}
+
+body > .window > .title {
+  background-color: lightgray;
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+}
+
+body > .window > .title .close {
+  float: right;
+
+  :hover {
+    cursor: pointer;
+    background-color: darkgray;
+  }
+}
+
+body > .window > .content {
+  position: relative;
+  width: 100%;
+}
+
+body > .window > .content > iframe.application {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+body > .window > .resizeWidth {
+  position: absolute;
+  top: 30px;
+  bottom: 8px;
+  right: 0;
+  width: 8px;
+  background-color: transparent;
+}
+
+body > .window > .resizeWidth:active { width: 100px; }
+body > .window > .resizeWidth:hover { cursor: e-resize; }
+
+body > .window > .resizeHeight {
+  position: absolute;
+  left: 0;
+  right: 8px;
+  bottom: 0;
+  height: 8px;
+  background-color: transparent;
+}
+
+body > .window > .resizeHeight:active { height: 100px; }
+body > .window > .resizeHeight:hover { cursor: s-resize; }
+
+body > .window > .resizeAll {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+body > .window > .resizeAll:active { height: 100px; width: 100px; }
+body > .window > .resizeAll:hover { cursor: se-resize; }

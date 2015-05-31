@@ -1,0 +1,49 @@
+
+/* Stylize explorer shortcuts */
+
+div.explorer-shortcut {
+
+  padding-top: 1px;
+  border: 1px solid transparent;
+  width: 100px;
+  max-height: 80px;
+  max-width: 100px;
+  overflow: hidden;
+
+  img.explorer-shortcut-thumb {
+    display: block;
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+  }
+
+  span.explorer-shortcut-name {
+    display: block;
+    text-align: center;
+  }
+
+  span.explorer-shortcut-name:hover {
+    cursor: default;
+  }
+
+}
+
+div.explorer-shortcut.explorer-shortcut-selected {
+  border: 1px dashed gray;
+}
+
+.board-context-menu {
+  position: absolute;
+  background-color: white;
+
+  div.board-context-entry {
+    display: block;
+    margin: 0;
+    padding: 10px;
+  }
+
+  div.board-context-entry:hover {
+    background-color: lightgray;
+    cursor: pointer;
+  }
+}

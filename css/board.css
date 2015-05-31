@@ -1,0 +1,154 @@
+/* line 4, ../sass/board.scss */
+body {
+  color: black;
+  overflow: hidden;
+  font-family: Open Sans, "Open Sans";
+}
+
+/* Board style */
+/* line 12, ../sass/board.scss */
+#desktop {
+  position: absolute;
+  padding: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+}
+
+/* line 22, ../sass/board.scss */
+#desktop {
+  background: url(../images/wallpaper.jpg) no-repeat top left;
+  z-index: 0;
+}
+
+/* line 27, ../sass/board.scss */
+#taskbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 40px;
+  border-bottom: 1px solid gray;
+  z-index: 1;
+}
+
+/* line 37, ../sass/board.scss */
+#taskbar div.window {
+  display: inline-block;
+  padding: 10px;
+  height: 40px;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  background-color: white;
+}
+
+/* line 46, ../sass/board.scss */
+#taskbar div.window:hover {
+  cursor: pointer;
+}
+
+/* line 50, ../sass/board.scss */
+body > .window {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: white;
+  min-width: 350px;
+  min-height: 150px;
+  border: 1px solid gray;
+  z-index: 2;
+}
+
+/* line 61, ../sass/board.scss */
+body > .window > .title {
+  background-color: lightgray;
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+}
+
+/* line 68, ../sass/board.scss */
+body > .window > .title .close {
+  float: right;
+}
+/* line 71, ../sass/board.scss */
+body > .window > .title .close :hover {
+  cursor: pointer;
+  background-color: darkgray;
+}
+
+/* line 77, ../sass/board.scss */
+body > .window > .content {
+  position: relative;
+  width: 100%;
+}
+
+/* line 82, ../sass/board.scss */
+body > .window > .content > iframe.application {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+/* line 88, ../sass/board.scss */
+body > .window > .resizeWidth {
+  position: absolute;
+  top: 30px;
+  bottom: 8px;
+  right: 0;
+  width: 8px;
+  background-color: transparent;
+}
+
+/* line 97, ../sass/board.scss */
+body > .window > .resizeWidth:active {
+  width: 100px;
+}
+
+/* line 98, ../sass/board.scss */
+body > .window > .resizeWidth:hover {
+  cursor: e-resize;
+}
+
+/* line 100, ../sass/board.scss */
+body > .window > .resizeHeight {
+  position: absolute;
+  left: 0;
+  right: 8px;
+  bottom: 0;
+  height: 8px;
+  background-color: transparent;
+}
+
+/* line 109, ../sass/board.scss */
+body > .window > .resizeHeight:active {
+  height: 100px;
+}
+
+/* line 110, ../sass/board.scss */
+body > .window > .resizeHeight:hover {
+  cursor: s-resize;
+}
+
+/* line 112, ../sass/board.scss */
+body > .window > .resizeAll {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+/* line 121, ../sass/board.scss */
+body > .window > .resizeAll:active {
+  height: 100px;
+  width: 100px;
+}
+
+/* line 122, ../sass/board.scss */
+body > .window > .resizeAll:hover {
+  cursor: se-resize;
+}

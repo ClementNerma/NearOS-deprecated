@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Disable caching !-->
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <!-- Normal HEAD !-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NearOS Application Launcher</title>
+
+    <!--<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">!-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/modals.css" />
+    <link rel="stylesheet" type="text/css" href="css/explorer.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome/font-awesome.min.css" />
+</head>
+<body>
+
+    <!-- Load Bootstrap components !-->
+    <script type="text/javascript" src="js/bootstrap/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Load CryptoJS components !-->
+    <script type="text/javascript" src="js/cryptojs/rollups/pbkdf2.js"></script>
+    <script type="text/javascript" src="js/cryptojs/rollups/sha512.js"></script>
+    <script type="text/javascript" src="js/cryptojs/rollups/aes.js"></script>
+    <script type="text/javascript" src="js/cryptojs/rollups/hmac-sha512.js"></script>
+    <script type="text/javascript" src="js/cryptojs/components/pad-nopadding-min.js"></script>
+
+    <!-- Load Board components !-->
+    <script type="text/javascript" src="js/lib/storage.js"></script>
+    <script type="text/javascript" src="js/lib/types.js"></script>
+    <script type="text/javascript" src="js/lib/database.js"></script>
+    <script type="text/javascript" src="js/application.js"></script>
+    <script type="text/javascript" src="js/system.js"></script>
+    <script type="text/javascript" src="js/window.js"></script>
+
+    <script type="text/javascript">
+
+    function startup(app, args) {
+
+        $.ajax({
+            method: 'GET',
+            url: 'js/board.js',
+            timeout: 3000,
+            dataType: 'text',
+            async: false,
+            success: function (data) {
+                window.eval(data);
+            },
+            error: function (err) {
+                document.body.innerHTML = 'Cannot load application : Cannot load file &lt;js/board.js&gt;';
+                console.error('Cannot load application : Cannot file <board.js>', err);
+            }
+        });
+
+        window.app = new Application(app.name, app.access, app.permissions);
+
+        window.args = args;
+
+        // launch application by loading main JS file
+        // use a setTimeout permit to unable access to arguments.callee.caller !
+
+        setTimeout(function() {
+            window.eval(board.fs.readFile('/apps/' + app.name + '/app.js'));
+        });
+
+    }
+
+    </script>
+
+</body>
+</html>

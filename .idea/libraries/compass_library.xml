@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="compass-library">
+    <CLASSES>
+      <root url="file:///usr/share/compass/frameworks/blueprint/stylesheets" />
+      <root url="file:///usr/share/compass/frameworks/compass/stylesheets" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
